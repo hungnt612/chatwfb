@@ -8,7 +8,7 @@
  * @format
  */
 
-import React from 'react';
+import React, {useEffect} from 'react';
 import {
   SafeAreaView,
   ScrollView,
@@ -28,17 +28,19 @@ import {
 } from 'react-native/Libraries/NewAppScreen';
 
 import LoginScreen from './src/screen/login/loginScreen';
-import JoinRoomScreen from "./src/screen/login/joinRoomScreen";
-import AppNavigation from "./src/screen/appNavigation";
+import JoinRoomScreen from './src/screen/login/joinRoomScreen';
+import AppNavigation from './src/screen/appNavigation';
+import {firebaseConfig} from './src/config/configFB';
+import firebase from 'firebase';
+
+
 const App = () => {
   const isDarkMode = useColorScheme() === 'dark';
-
-
   return (
     <SafeAreaView style={{flex: 1}}>
       {/*<JoinRoomScreen></JoinRoomScreen>*/}
       {/*<LoginScreen />*/}
-      <AppNavigation></AppNavigation>
+      <AppNavigation />
     </SafeAreaView>
   );
 };
