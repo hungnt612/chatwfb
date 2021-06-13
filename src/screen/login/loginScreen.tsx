@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from "react";
 import {
   SafeAreaView,
   ScrollView,
@@ -16,7 +16,8 @@ import {Controller, useForm, SubmitHandler} from 'react-hook-form';
 import {useNavigation} from '@react-navigation/native';
 import CustomInput from '../../components/customInput';
 import CustomButton from '../../components/customButton';
-
+import firebase from "firebase";
+import { firebaseConfig } from "../../config/configFB";
 
 
 const schema = yup.object().shape({
@@ -31,6 +32,9 @@ interface FormInput {
 
 
 const LoginScreen: React.FC = () => {
+  useEffect(() => {
+    firebase.initializeApp(firebaseConfig);
+  }, []);
 
   const {
     control,
