@@ -28,7 +28,7 @@ interface FormInput {
 }
 
 const ToChatRoom = (data: any) => {
-  console.log(data)
+  console.log(data);
   firebase
     .auth()
     .signInAnonymously()
